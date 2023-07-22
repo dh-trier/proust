@@ -290,6 +290,6 @@ Siehe: [@melancon_2023_liberation].
 # Back matter
 
 ::: {.nonincremental}
-* **Referenz**: Christof Schöch, "Modellierung von semi-strukturierten Daten in den Digital Humanities". *Workshop: Remembrance of Strings Past*, org. Maria Hinzmann, Matei Chihaia, Christof Schöch. Trier / TCDH, 25.-26. Juli 2023. URL: https://dhtrier.quarto.pub/proust, DOI: [10.5281/zenodo.8174226](https://doi.org/10.5281/zenodo.8174226).  
+* **Referenz**: Christof Schöch, "Modellierung von semi-strukturierten Daten in den Digital Humanities". *Workshop: Remembrance of Strings Past*, org. Maria Hinzmann, Matei Chihaia, Christof Schöch. Trier / TCDH, 25.-26. Juli 2023. URL: [https://dhtrier.quarto.pub/proust](https://dhtrier.quarto.pub/proust]), DOI: [10.5281/zenodo.8174226](https://doi.org/10.5281/zenodo.8174226).  
 * **Lizenz**: [Creative Commons Attribution 4.0 International (CC BY)](https://creativecommons.org/licenses/by/4.0/) 
 :::
