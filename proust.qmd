@@ -14,29 +14,61 @@ format:
 
 ---
 
-# Übersicht 
+# Übersicht
 
+::: {.nonincremental}
 1. Begriffsklärungen
 2. Beispiel Personendaten
 3. Beispiel bibliographische Daten
 4. Fazit
+:::
+
+::: {.notes}
+- Typische Praktiken der DH beim Umgang mit schwach strukturierten Daten aus den Geisteswissenschaften 
+- Prinzip der Modellierung, Explizierung, Anreicherung
+- Anhang zweier kleiner Nebenprojekte aus den letzten Monaten
+:::
+
 
 
 # Begriffsklärungen 
 
-## Modellierung 
+## Modellierung
+
+- Eine selektive, zweckorientierte, konstruierte, explizite Repräsentation eines Gegenstands oder einer Domäne 
+- Drei Ebenen
+  - Modellierte Instanz(en)
+  - Konzeptuelles Modell der Domäne
+  - Formale Definition des Modells
+- Modell von vs. Modell für (in den DH meist beides) 
+
+::: aside 
+Siehe: [@jannidis_2017_datenmodellierung]. 
+:::
 
 ## Daten 
 
-## Strukturiertheit 
+- Eine Menge (mehr oder weniger explizit) modellierter Instanzen 
+- In digitaler Form: algorithmisch lesbar, manipulierbar, auswertbar
+- Daten (Gegenstand) vs. Metadaten (Kontextualisierung der Daten)
 
-- strukturiert (Datenbank)
-- unstrukturiert (plain text)
-- semi-strukturiert (XML, JSON)
-
-::: aside
-Some additional commentary of more peripheral interest.
+::: aside 
+Siehe: [@schoch_2013_bigb]. 
 :::
+
+
+::: {.notes}
+- Daten sind ohne Modellierung kaum denkbar, und auf jeden Fall kaum wirklich nutzbar
+- Auch  Metadaten sind modellierte Daten! "Metadatenmodell" 
+:::
+
+
+## Grade von Strukturiertheit 
+
+- (quasi) unstrukturiert: bspw. plain text
+- semi-strukturiert: bspw. XML, JSON
+- (stark) strukturiert: bspw. relationale Datenbank
+
 
 ::: {.notes}
 Speaker notes go here.
@@ -48,21 +80,74 @@ Speaker notes go here.
 
 ## Der 'Möschter-Katalog' (2008)
 
+- Dissertation von Angela Möschter zur Geschichte der Juden in Treviso
+- Mit einem Personendaten-Katalog
+  - Rund 200 Einträge / Personen
+  - Strukturiert in Informationsarten
+  - Mit Quellenangaben und Querverweisen
+
 ::: aside
 Siehe [@moeschter_2008_judena]. 
 :::
+
+## Vorgehensweise 
+
+- Textvorlage in DOCX: ==[Python]==> XML-TEI (Referenzdaten)
+- XML-TEI ==[Python]==> Markdown (Quarto-Basis)
+- Markdown ==[Quarto]==> HTML + PDF
+
+## XML-Beispiel 
+
+```xml
+   <div type="entry" xml:id="E003">
+    <head>Abraham q. Michaelis (Rapp) de Ancona<ref type="notecall" target="#E3-N1">[1]</ref>
+    </head>
+    <div type="infos">
+     <p ana="info" n="C1">1. 1425 in Treviso als Geldverleiher belegt<ref type="notecall" target="#E3-N2">[2]</ref>.
+     </p>
+     <p ana="info" n="C3">3. Sohn des <ref type="crossref" target="#E130">Michael/Jechiel (Rapp)</ref>
+      <hi rend="italics">de Ancona</hi> (1416 bereits verstorben) und der Bruna/Bruneta; verheiratet mit Roxeta; Vater der Bruneta, der Anna, des Jacob und des Michael; Neffe von <ref type="crossref" target="#E096">Lazarus</ref> und
+      <ref type="crossref" target="#E144">Moyses Rapp</ref>; außerdem lebte er 1425 zusammen mit seinem Bruder Mandulinus und seiner Schwester Caradona und deren Mann Vivantus sowie deren Sohn Tomar mit seiner Amme Dolce; und mit seiner Tante Dolce (Schwester der Bruna) und seinem<hi rend="italics">famulus</hi> Benedictus.</p>
+     <p ana="info" n="C4">4. Geldverleiher,<hi rend="italics">sotius</hi> des <ref type="crossref" target="#E182">Sanson <hi rend="italics">parvus</hi> q. Jacobi</ref>
+    </p>
+    <p ana="info" n="C7">7. Wohl identisch mit dem Abraham q. Jechiel<hi rend="italics">de Ancona habitator in Mestre</hi>, der 1430 in Treviso durch einen Jacob vertreten wird<ref type="notecall" target="#E3-N3">[3]</ref>.
+    </p>
+    <p ana="info" n="C8">8. Ancona</p>
+   </div>
+   <div type="notes">
+    <note xml:id="E3-N1"> Vgl. den Stammbaum im Anhang sowie Kap. III.4.</note>
+    <note xml:id="E3-N2"> Quelle 21.</note>
+    <note xml:id="E3-N3"> ASTv, Notarile I, b. 262, q. 1428-1435, 88v.</note>
+   </div>
+  </div>
+```
+
+
+## Herausforderungen 
+
+- Schwach strukturierte Vorlage 
+- Implizite Verweisstruktur (händische Nacharbeit im XML)
+- Korrekturvorgang: XML => MD => HTML/PDF
+
+## Ergebnis (Stand April 2023)
+
+- Daten liegen semi-strukturiert vor
+- Querverweise fehlen 
+- Publikation steht aus
+
+##
+![Beispiel-Eintrag aus dem digitalen Treviso-Katalog](img/treviso-entry.png)
 
 
 
 
 # Beispiel bibliographische Daten
 
-
-
 ## Hintergrund 
 
-- Bibliographie von Benoit Melancon: *XVIIIe: Bibliographie* (seit 1992)
-- Formular => FileMaker-Datenbank => HTML: [mapageweb.umontreal.ca](http://www.mapageweb.umontreal.ca/melancon/biblio.tdm.html)
+- Bibliographie zum 18. Jahrhundert von Benoit Melancon: *XVIIIe: Bibliographie* (seit 1992)
+- Web-Formular => FileMaker-Datenbank => HTML: [mapageweb.umontreal.ca](http://www.mapageweb.umontreal.ca/melancon/biblio.tdm.html)
+- Community-driven: keine systematische Abdeckung o.ä.
 - Januar 2023: Publikation der Gesamtdaten 1992-2022 als CSV-Datei
 
 ::: aside
@@ -71,26 +156,130 @@ Siehe: [@melancon_2023_liberation].
 
 ## Vorgehensweise 
 
-- Python-Skript zur Transformation CSV => BibTeX
-- Import der BibTeX-Datei in Zotero: dort Korrekturen
-- Export in Standard-Formate, darunter Zotero RDF
-- Auswertungen und Kommentare: [Website](https://christofs.github.io/BIB18/)
+- CSV ==[Python]==> BibTeX-Dateien
+- BibTeX-Dateien ==[Import]==> Zotero: dort Korrekturen
+- Zotero ==[Export]==> u.a. Zotero RDF
+- RDF ==[Python & Quarto]==> Auswertungen und Kommentare + [BIB18-Website](https://christofs.github.io/BIB18/)
+
+## XML-Beispiel (Zotero RDF)
+
+```xml
+<bib:BookSection rdf:about="#item_194660">
+  <z:itemType>bookSection</z:itemType>
+  <dcterms:isPartOf>
+    <bib:Book>
+      <dcterms:isPartOf>
+        <bib:Series>
+          <dc:title>La République des Lettres</dc:title>
+          <dc:identifier>38</dc:identifier>
+        </bib:Series>
+      </dcterms:isPartOf>
+      <dc:identifier>ISBN 978-90-429-2196-2</dc:identifier>
+    </bib:Book>
+  </dcterms:isPartOf>
+  <dc:publisher>
+    <foaf:Organization>
+      <vcard:adr>
+        <vcard:Address>
+          <vcard:locality>Louvain, Paris et Walpole</vcard:locality>
+        </vcard:Address>
+      </vcard:adr>
+      <foaf:name>Peeters</foaf:name>
+    </foaf:Organization>
+  </dc:publisher>
+  <bib:authors>
+    <rdf:Seq>
+      <rdf:li>
+        <foaf:Person>
+          <foaf:surname>Ramond</foaf:surname>
+          <foaf:givenName>Catherine</foaf:givenName>
+        </foaf:Person>
+      </rdf:li>
+    </rdf:Seq>
+  </bib:authors>
+  <bib:editors>
+    <rdf:Seq>
+      <rdf:li>
+        <foaf:Person>
+          <foaf:surname>Herman</foaf:surname>
+          <foaf:givenName>Jan</foaf:givenName>
+        </foaf:Person>
+      </rdf:li>
+      <rdf:li>
+        <foaf:Person>
+          <foaf:surname>Paschoud</foaf:surname>
+          <foaf:givenName>Adrien</foaf:givenName>
+        </foaf:Person>
+      </rdf:li>
+      <rdf:li>
+        <foaf:Person>
+          <foaf:surname>Pelckmans</foaf:surname>
+          <foaf:givenName>Paul</foaf:givenName>
+        </foaf:Person>
+      </rdf:li>
+      <rdf:li>
+        <foaf:Person>
+          <foaf:surname>Rosset</foaf:surname>
+          <foaf:givenName>François</foaf:givenName>
+        </foaf:Person>
+      </rdf:li>
+    </rdf:Seq>
+  </bib:editors>
+  <dc:title>Quand le roman se met en scène : théâtralité et réflexivité au XVIIIe siècle</dc:title>
+  <dc:date>2010</dc:date>
+  <z:language>French</z:language>
+  <dc:description>Citation Key: ramond_2010_quand – Book: l’Assiette des fictions. Enquêtes sur l’autoréflexivité romanesque. Actes des colloques de Lausanne (mars 2007) et de Leuven (juin 2007)</dc:description>
+  <bib:pages>433 et suiv.</bib:pages>
+</bib:BookSection>
+```
+
+## Herausforderungen 
+
+- Schwach standardisierte Ausgangsdaten (CSV)
+- Insbesondere Personen-Namen: 
+  - Grenzen zwischen Namen
+  - Vorname(n) vs. Nachname(n)
+- Publikationstypen im Zielformat (Zotero / BibTeX): Monographie vs. Textedition vs. Sammelband = "Book" 
+- Keine Abstracts oder Keywords vorhanden
+
+## Zwischenergebnisse 
+
+- Sprachen: Französisch dominiert 
+- Themen / Titel: Autoren, Stichworte
+- Praktiken der Kollaboration: Autorschaft vs. Herausgeberschaft
+
+## 
+![Clustering von Ko-Herausgeberschaft (Gephi)](/img/coeditors_top2.svg)
+
+## Nächste Schritte 
+
+- Weitere Korrektur der Daten in Zotero 
+- Updates: Zotero => BibTeX + RDF => Jupyter => HTML
+- Weitere Auswertungen: Sprachen, Themen, Biases
+- Anreicherung mit Normdaten (in Zotero schwierig)
 
 
+# Fazit 
 
-## Test
+## Positive Aspekte 
 
-::: {.panel-tabset}
+- Transformation in stärker strukturierte Formate: 
+  - zeitgemäße Publikationsform
+  - Suche und Auswertungen
+  - verbesserte Nachnutzbarkeit
+- Automatisierte Pipeline
+  - macht Aktualisierungen / Korrekturen *relativ* einfach 
 
-### Tab A
 
-Content for `Tab A`
+## Herausforderungen 
 
-### Tab B
-
-Content for `Tab B`
-
-:::
+- Ausgangsdaten meist nicht ausreichend strukturiert
+  - Personendaten: Querverweise
+  - Bibliographie: Personen-Namen
+- Derzeit schwache Erschließung über Normdaten
+  - Personendaten: in XML relativ gut machbar
+  - Bibliographie: in Zotero relativ schlecht machbar
+- Zielformat / Datenmodell muss gut überlegt sein (XML!)
 
 
 # References 

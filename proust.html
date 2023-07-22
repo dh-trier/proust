@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -360,12 +425,31 @@ Christof Schöch
 </section>
 <section id="übersicht" class="title-slide slide level1 center">
 <h1>Übersicht</h1>
+<div>
 <ol type="1">
-<li class="fragment">Begriffsklärungen</li>
-<li class="fragment">Beispiel Personendaten</li>
-<li class="fragment">Beispiel bibliographische Daten</li>
-<li class="fragment">Fazit</li>
+<li>Begriffsklärungen</li>
+<li>Beispiel Personendaten</li>
+<li>Beispiel bibliographische Daten</li>
+<li>Fazit</li>
 </ol>
+</div>
+<aside class="notes">
+<ul>
+<li>Typische Praktiken der DH beim Umgang mit schwach strukturierten Daten aus den Geisteswissenschaften</li>
+<li>Prinzip der Modellierung, Explizierung, Anreicherung</li>
+<li>Anhang zweier kleiner Nebenprojekte aus den letzten Monaten</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section>
@@ -375,18 +459,54 @@ Christof Schöch
 </section>
 <section id="modellierung" class="slide level2">
 <h2>Modellierung</h2>
-</section>
-<section id="daten" class="slide level2">
-<h2>Daten</h2>
-</section>
-<section id="strukturiertheit" class="slide level2">
-<h2>Strukturiertheit</h2>
 <ul>
-<li class="fragment">strukturiert (Datenbank)</li>
-<li class="fragment">unstrukturiert (plain text)</li>
-<li class="fragment">semi-strukturiert (XML, JSON)</li>
+<li class="fragment">Eine selektive, zweckorientierte, konstruierte, explizite Repräsentation eines Gegenstands oder einer Domäne</li>
+<li class="fragment">Drei Ebenen
+<ul>
+<li class="fragment">Modellierte Instanz(en)</li>
+<li class="fragment">Konzeptuelles Modell der Domäne</li>
+<li class="fragment">Formale Definition des Modells</li>
+</ul></li>
+<li class="fragment">Modell von vs.&nbsp;Modell für (in den DH meist beides)</li>
 </ul>
 
+<aside><div>
+<p>Siehe: <span class="citation" data-cites="jannidis_2017_datenmodellierung">(<a href="#/references" role="doc-biblioref" onclick="">Jannidis 2017</a>)</span>.</p>
+</div></aside></section>
+<section id="daten" class="slide level2">
+<h2>Daten</h2>
+<ul>
+<li class="fragment">Eine Menge (mehr oder weniger explizit) modellierter Instanzen</li>
+<li class="fragment">In digitaler Form: algorithmisch lesbar, manipulierbar, auswertbar</li>
+<li class="fragment">Daten (Gegenstand) vs.&nbsp;Metadaten (Kontextualisierung der Daten)</li>
+</ul>
+
+<aside class="notes">
+<ul>
+<li>Daten sind ohne Modellierung kaum denkbar, und auf jeden Fall kaum wirklich nutzbar</li>
+<li>Auch Metadaten sind modellierte Daten! “Metadatenmodell”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Siehe: <span class="citation" data-cites="schoch_2013_bigb">(<a href="#/references" role="doc-biblioref" onclick="">Schöch 2013</a>)</span>.</p>
+</div></aside></section>
+<section id="grade-von-strukturiertheit" class="slide level2">
+<h2>Grade von Strukturiertheit</h2>
+<ul>
+<li class="fragment">(quasi) unstrukturiert: bspw. plain text</li>
+<li class="fragment">semi-strukturiert: bspw. XML, JSON</li>
+<li class="fragment">(stark) strukturiert: bspw. relationale Datenbank</li>
+</ul>
 <aside class="notes">
 <p>Speaker notes go here.</p>
 <style type="text/css">
@@ -400,9 +520,7 @@ Christof Schöch
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<aside><div>
-<p>Some additional commentary of more peripheral interest.</p>
-</div></aside></section></section>
+</section></section>
 <section>
 <section id="beispiel-personendaten" class="title-slide slide level1 center">
 <h1>Beispiel Personendaten</h1>
@@ -410,10 +528,71 @@ Christof Schöch
 </section>
 <section id="der-möschter-katalog-2008" class="slide level2">
 <h2>Der ‘Möschter-Katalog’ (2008)</h2>
+<ul>
+<li class="fragment">Dissertation von Angela Möschter zur Geschichte der Juden in Treviso</li>
+<li class="fragment">Mit einem Personendaten-Katalog
+<ul>
+<li class="fragment">Rund 200 Einträge / Personen</li>
+<li class="fragment">Strukturiert in Informationsarten</li>
+<li class="fragment">Mit Quellenangaben und Querverweisen</li>
+</ul></li>
+</ul>
 
 <aside><div>
 <p>Siehe <span class="citation" data-cites="moeschter_2008_judena">(<a href="#/references" role="doc-biblioref" onclick="">Möschter 2008</a>)</span>.</p>
-</div></aside></section></section>
+</div></aside></section>
+<section id="vorgehensweise" class="slide level2">
+<h2>Vorgehensweise</h2>
+<ul>
+<li class="fragment">Textvorlage in DOCX: ==[Python]==&gt; XML-TEI (Referenzdaten)</li>
+<li class="fragment">XML-TEI ==[Python]==&gt; Markdown (Quarto-Basis)</li>
+<li class="fragment">Markdown ==[Quarto]==&gt; HTML + PDF</li>
+</ul>
+</section>
+<section id="xml-beispiel" class="slide level2">
+<h2>XML-Beispiel</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1"></a>   &lt;<span class="kw">div</span><span class="ot"> type=</span><span class="st">"entry"</span><span class="ot"> xml:id=</span><span class="st">"E003"</span>&gt;</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    &lt;<span class="kw">head</span>&gt;Abraham q. Michaelis (Rapp) de Ancona&lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"notecall"</span><span class="ot"> target=</span><span class="st">"#E3-N1"</span>&gt;[1]&lt;/<span class="kw">ref</span>&gt;</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    &lt;/<span class="kw">head</span>&gt;</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    &lt;<span class="kw">div</span><span class="ot"> type=</span><span class="st">"infos"</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5"></a>     &lt;<span class="kw">p</span><span class="ot"> ana=</span><span class="st">"info"</span><span class="ot"> n=</span><span class="st">"C1"</span>&gt;1. 1425 in Treviso als Geldverleiher belegt&lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"notecall"</span><span class="ot"> target=</span><span class="st">"#E3-N2"</span>&gt;[2]&lt;/<span class="kw">ref</span>&gt;.</span>
+<span id="cb1-6"><a href="#cb1-6"></a>     &lt;/<span class="kw">p</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7"></a>     &lt;<span class="kw">p</span><span class="ot"> ana=</span><span class="st">"info"</span><span class="ot"> n=</span><span class="st">"C3"</span>&gt;3. Sohn des &lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"crossref"</span><span class="ot"> target=</span><span class="st">"#E130"</span>&gt;Michael/Jechiel (Rapp)&lt;/<span class="kw">ref</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8"></a>      &lt;<span class="kw">hi</span><span class="ot"> rend=</span><span class="st">"italics"</span>&gt;de Ancona&lt;/<span class="kw">hi</span>&gt; (1416 bereits verstorben) und der Bruna/Bruneta; verheiratet mit Roxeta; Vater der Bruneta, der Anna, des Jacob und des Michael; Neffe von &lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"crossref"</span><span class="ot"> target=</span><span class="st">"#E096"</span>&gt;Lazarus&lt;/<span class="kw">ref</span>&gt; und</span>
+<span id="cb1-9"><a href="#cb1-9"></a>      &lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"crossref"</span><span class="ot"> target=</span><span class="st">"#E144"</span>&gt;Moyses Rapp&lt;/<span class="kw">ref</span>&gt;; außerdem lebte er 1425 zusammen mit seinem Bruder Mandulinus und seiner Schwester Caradona und deren Mann Vivantus sowie deren Sohn Tomar mit seiner Amme Dolce; und mit seiner Tante Dolce (Schwester der Bruna) und seinem&lt;<span class="kw">hi</span><span class="ot"> rend=</span><span class="st">"italics"</span>&gt;famulus&lt;/<span class="kw">hi</span>&gt; Benedictus.&lt;/<span class="kw">p</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10"></a>     &lt;<span class="kw">p</span><span class="ot"> ana=</span><span class="st">"info"</span><span class="ot"> n=</span><span class="st">"C4"</span>&gt;4. Geldverleiher,&lt;<span class="kw">hi</span><span class="ot"> rend=</span><span class="st">"italics"</span>&gt;sotius&lt;/<span class="kw">hi</span>&gt; des &lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"crossref"</span><span class="ot"> target=</span><span class="st">"#E182"</span>&gt;Sanson &lt;<span class="kw">hi</span><span class="ot"> rend=</span><span class="st">"italics"</span>&gt;parvus&lt;/<span class="kw">hi</span>&gt; q. Jacobi&lt;/<span class="kw">ref</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11"></a>    &lt;/<span class="kw">p</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12"></a>    &lt;<span class="kw">p</span><span class="ot"> ana=</span><span class="st">"info"</span><span class="ot"> n=</span><span class="st">"C7"</span>&gt;7. Wohl identisch mit dem Abraham q. Jechiel&lt;<span class="kw">hi</span><span class="ot"> rend=</span><span class="st">"italics"</span>&gt;de Ancona habitator in Mestre&lt;/<span class="kw">hi</span>&gt;, der 1430 in Treviso durch einen Jacob vertreten wird&lt;<span class="kw">ref</span><span class="ot"> type=</span><span class="st">"notecall"</span><span class="ot"> target=</span><span class="st">"#E3-N3"</span>&gt;[3]&lt;/<span class="kw">ref</span>&gt;.</span>
+<span id="cb1-13"><a href="#cb1-13"></a>    &lt;/<span class="kw">p</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    &lt;<span class="kw">p</span><span class="ot"> ana=</span><span class="st">"info"</span><span class="ot"> n=</span><span class="st">"C8"</span>&gt;8. Ancona&lt;/<span class="kw">p</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15"></a>   &lt;/<span class="kw">div</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16"></a>   &lt;<span class="kw">div</span><span class="ot"> type=</span><span class="st">"notes"</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17"></a>    &lt;<span class="kw">note</span><span class="ot"> xml:id=</span><span class="st">"E3-N1"</span>&gt; Vgl. den Stammbaum im Anhang sowie Kap. III.4.&lt;/<span class="kw">note</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18"></a>    &lt;<span class="kw">note</span><span class="ot"> xml:id=</span><span class="st">"E3-N2"</span>&gt; Quelle 21.&lt;/<span class="kw">note</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19"></a>    &lt;<span class="kw">note</span><span class="ot"> xml:id=</span><span class="st">"E3-N3"</span>&gt; ASTv, Notarile I, b. 262, q. 1428-1435, 88v.&lt;/<span class="kw">note</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20"></a>   &lt;/<span class="kw">div</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21"></a>  &lt;/<span class="kw">div</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="herausforderungen" class="slide level2">
+<h2>Herausforderungen</h2>
+<ul>
+<li class="fragment">Schwach strukturierte Vorlage</li>
+<li class="fragment">Implizite Verweisstruktur (händische Nacharbeit im XML)</li>
+<li class="fragment">Korrekturvorgang: XML =&gt; MD =&gt; HTML/PDF</li>
+</ul>
+</section>
+<section id="ergebnis-stand-april-2023" class="slide level2">
+<h2>Ergebnis (Stand April 2023)</h2>
+<ul>
+<li class="fragment">Daten liegen semi-strukturiert vor</li>
+<li class="fragment">Querverweise fehlen</li>
+<li class="fragment">Publikation steht aus</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="img/treviso-entry.png" class="r-stretch quarto-figure-center"><p class="caption">Beispiel-Eintrag aus dem digitalen Treviso-Katalog</p></section></section>
 <section>
 <section id="beispiel-bibliographische-daten" class="title-slide slide level1 center">
 <h1>Beispiel bibliographische Daten</h1>
@@ -422,45 +601,178 @@ Christof Schöch
 <section id="hintergrund" class="slide level2">
 <h2>Hintergrund</h2>
 <ul>
-<li class="fragment">Bibliographie von Benoit Melancon: <em>XVIIIe: Bibliographie</em> (seit 1992)</li>
-<li class="fragment">Formular =&gt; FileMaker-Datenbank =&gt; HTML: <a href="http://www.mapageweb.umontreal.ca/melancon/biblio.tdm.html">mapageweb.umontreal.ca</a></li>
+<li class="fragment">Bibliographie zum 18. Jahrhundert von Benoit Melancon: <em>XVIIIe: Bibliographie</em> (seit 1992)</li>
+<li class="fragment">Web-Formular =&gt; FileMaker-Datenbank =&gt; HTML: <a href="http://www.mapageweb.umontreal.ca/melancon/biblio.tdm.html">mapageweb.umontreal.ca</a></li>
+<li class="fragment">Community-driven: keine systematische Abdeckung o.ä.</li>
 <li class="fragment">Januar 2023: Publikation der Gesamtdaten 1992-2022 als CSV-Datei</li>
 </ul>
 
 <aside><div>
 <p>Siehe: <span class="citation" data-cites="melancon_2023_liberation">(<a href="#/references" role="doc-biblioref" onclick="">Melançon 2023</a>)</span>.</p>
 </div></aside></section>
-<section id="vorgehensweise" class="slide level2">
+<section id="vorgehensweise-1" class="slide level2">
 <h2>Vorgehensweise</h2>
 <ul>
-<li class="fragment">Python-Skript zur Transformation CSV =&gt; BibTeX</li>
-<li class="fragment">Import der BibTeX-Datei in Zotero: dort Korrekturen</li>
-<li class="fragment">Export in Standard-Formate, darunter Zotero RDF</li>
-<li class="fragment">Auswertungen und Kommentare: <a href="https://christofs.github.io/BIB18/">Website</a></li>
+<li class="fragment">CSV ==[Python]==&gt; BibTeX-Dateien</li>
+<li class="fragment">BibTeX-Dateien ==[Import]==&gt; Zotero: dort Korrekturen</li>
+<li class="fragment">Zotero ==[Export]==&gt; u.a. Zotero RDF</li>
+<li class="fragment">RDF ==[Python &amp; Quarto]==&gt; Auswertungen und Kommentare + <a href="https://christofs.github.io/BIB18/">BIB18-Website</a></li>
 </ul>
 </section>
-<section id="test" class="slide level2">
-<h2>Test</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Tab A</a></li><li><a href="#tabset-1-2">Tab B</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p>Content for <code>Tab A</code></p>
-</div>
-<div id="tabset-1-2">
-<p>Content for <code>Tab B</code></p>
-</div>
-</div>
-</div>
+<section id="xml-beispiel-zotero-rdf" class="slide level2">
+<h2>XML-Beispiel (Zotero RDF)</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1"></a>&lt;<span class="kw">bib:BookSection</span><span class="ot"> rdf:about=</span><span class="st">"#item_194660"</span>&gt;</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  &lt;<span class="kw">z:itemType</span>&gt;bookSection&lt;/<span class="kw">z:itemType</span>&gt;</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  &lt;<span class="kw">dcterms:isPartOf</span>&gt;</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    &lt;<span class="kw">bib:Book</span>&gt;</span>
+<span id="cb2-5"><a href="#cb2-5"></a>      &lt;<span class="kw">dcterms:isPartOf</span>&gt;</span>
+<span id="cb2-6"><a href="#cb2-6"></a>        &lt;<span class="kw">bib:Series</span>&gt;</span>
+<span id="cb2-7"><a href="#cb2-7"></a>          &lt;<span class="kw">dc:title</span>&gt;La République des Lettres&lt;/<span class="kw">dc:title</span>&gt;</span>
+<span id="cb2-8"><a href="#cb2-8"></a>          &lt;<span class="kw">dc:identifier</span>&gt;38&lt;/<span class="kw">dc:identifier</span>&gt;</span>
+<span id="cb2-9"><a href="#cb2-9"></a>        &lt;/<span class="kw">bib:Series</span>&gt;</span>
+<span id="cb2-10"><a href="#cb2-10"></a>      &lt;/<span class="kw">dcterms:isPartOf</span>&gt;</span>
+<span id="cb2-11"><a href="#cb2-11"></a>      &lt;<span class="kw">dc:identifier</span>&gt;ISBN 978-90-429-2196-2&lt;/<span class="kw">dc:identifier</span>&gt;</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    &lt;/<span class="kw">bib:Book</span>&gt;</span>
+<span id="cb2-13"><a href="#cb2-13"></a>  &lt;/<span class="kw">dcterms:isPartOf</span>&gt;</span>
+<span id="cb2-14"><a href="#cb2-14"></a>  &lt;<span class="kw">dc:publisher</span>&gt;</span>
+<span id="cb2-15"><a href="#cb2-15"></a>    &lt;<span class="kw">foaf:Organization</span>&gt;</span>
+<span id="cb2-16"><a href="#cb2-16"></a>      &lt;<span class="kw">vcard:adr</span>&gt;</span>
+<span id="cb2-17"><a href="#cb2-17"></a>        &lt;<span class="kw">vcard:Address</span>&gt;</span>
+<span id="cb2-18"><a href="#cb2-18"></a>          &lt;<span class="kw">vcard:locality</span>&gt;Louvain, Paris et Walpole&lt;/<span class="kw">vcard:locality</span>&gt;</span>
+<span id="cb2-19"><a href="#cb2-19"></a>        &lt;/<span class="kw">vcard:Address</span>&gt;</span>
+<span id="cb2-20"><a href="#cb2-20"></a>      &lt;/<span class="kw">vcard:adr</span>&gt;</span>
+<span id="cb2-21"><a href="#cb2-21"></a>      &lt;<span class="kw">foaf:name</span>&gt;Peeters&lt;/<span class="kw">foaf:name</span>&gt;</span>
+<span id="cb2-22"><a href="#cb2-22"></a>    &lt;/<span class="kw">foaf:Organization</span>&gt;</span>
+<span id="cb2-23"><a href="#cb2-23"></a>  &lt;/<span class="kw">dc:publisher</span>&gt;</span>
+<span id="cb2-24"><a href="#cb2-24"></a>  &lt;<span class="kw">bib:authors</span>&gt;</span>
+<span id="cb2-25"><a href="#cb2-25"></a>    &lt;<span class="kw">rdf:Seq</span>&gt;</span>
+<span id="cb2-26"><a href="#cb2-26"></a>      &lt;<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-27"><a href="#cb2-27"></a>        &lt;<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-28"><a href="#cb2-28"></a>          &lt;<span class="kw">foaf:surname</span>&gt;Ramond&lt;/<span class="kw">foaf:surname</span>&gt;</span>
+<span id="cb2-29"><a href="#cb2-29"></a>          &lt;<span class="kw">foaf:givenName</span>&gt;Catherine&lt;/<span class="kw">foaf:givenName</span>&gt;</span>
+<span id="cb2-30"><a href="#cb2-30"></a>        &lt;/<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-31"><a href="#cb2-31"></a>      &lt;/<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-32"><a href="#cb2-32"></a>    &lt;/<span class="kw">rdf:Seq</span>&gt;</span>
+<span id="cb2-33"><a href="#cb2-33"></a>  &lt;/<span class="kw">bib:authors</span>&gt;</span>
+<span id="cb2-34"><a href="#cb2-34"></a>  &lt;<span class="kw">bib:editors</span>&gt;</span>
+<span id="cb2-35"><a href="#cb2-35"></a>    &lt;<span class="kw">rdf:Seq</span>&gt;</span>
+<span id="cb2-36"><a href="#cb2-36"></a>      &lt;<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-37"><a href="#cb2-37"></a>        &lt;<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-38"><a href="#cb2-38"></a>          &lt;<span class="kw">foaf:surname</span>&gt;Herman&lt;/<span class="kw">foaf:surname</span>&gt;</span>
+<span id="cb2-39"><a href="#cb2-39"></a>          &lt;<span class="kw">foaf:givenName</span>&gt;Jan&lt;/<span class="kw">foaf:givenName</span>&gt;</span>
+<span id="cb2-40"><a href="#cb2-40"></a>        &lt;/<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-41"><a href="#cb2-41"></a>      &lt;/<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-42"><a href="#cb2-42"></a>      &lt;<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-43"><a href="#cb2-43"></a>        &lt;<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-44"><a href="#cb2-44"></a>          &lt;<span class="kw">foaf:surname</span>&gt;Paschoud&lt;/<span class="kw">foaf:surname</span>&gt;</span>
+<span id="cb2-45"><a href="#cb2-45"></a>          &lt;<span class="kw">foaf:givenName</span>&gt;Adrien&lt;/<span class="kw">foaf:givenName</span>&gt;</span>
+<span id="cb2-46"><a href="#cb2-46"></a>        &lt;/<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-47"><a href="#cb2-47"></a>      &lt;/<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-48"><a href="#cb2-48"></a>      &lt;<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-49"><a href="#cb2-49"></a>        &lt;<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-50"><a href="#cb2-50"></a>          &lt;<span class="kw">foaf:surname</span>&gt;Pelckmans&lt;/<span class="kw">foaf:surname</span>&gt;</span>
+<span id="cb2-51"><a href="#cb2-51"></a>          &lt;<span class="kw">foaf:givenName</span>&gt;Paul&lt;/<span class="kw">foaf:givenName</span>&gt;</span>
+<span id="cb2-52"><a href="#cb2-52"></a>        &lt;/<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-53"><a href="#cb2-53"></a>      &lt;/<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-54"><a href="#cb2-54"></a>      &lt;<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-55"><a href="#cb2-55"></a>        &lt;<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-56"><a href="#cb2-56"></a>          &lt;<span class="kw">foaf:surname</span>&gt;Rosset&lt;/<span class="kw">foaf:surname</span>&gt;</span>
+<span id="cb2-57"><a href="#cb2-57"></a>          &lt;<span class="kw">foaf:givenName</span>&gt;François&lt;/<span class="kw">foaf:givenName</span>&gt;</span>
+<span id="cb2-58"><a href="#cb2-58"></a>        &lt;/<span class="kw">foaf:Person</span>&gt;</span>
+<span id="cb2-59"><a href="#cb2-59"></a>      &lt;/<span class="kw">rdf:li</span>&gt;</span>
+<span id="cb2-60"><a href="#cb2-60"></a>    &lt;/<span class="kw">rdf:Seq</span>&gt;</span>
+<span id="cb2-61"><a href="#cb2-61"></a>  &lt;/<span class="kw">bib:editors</span>&gt;</span>
+<span id="cb2-62"><a href="#cb2-62"></a>  &lt;<span class="kw">dc:title</span>&gt;Quand le roman se met en scène : théâtralité et réflexivité au XVIIIe siècle&lt;/<span class="kw">dc:title</span>&gt;</span>
+<span id="cb2-63"><a href="#cb2-63"></a>  &lt;<span class="kw">dc:date</span>&gt;2010&lt;/<span class="kw">dc:date</span>&gt;</span>
+<span id="cb2-64"><a href="#cb2-64"></a>  &lt;<span class="kw">z:language</span>&gt;French&lt;/<span class="kw">z:language</span>&gt;</span>
+<span id="cb2-65"><a href="#cb2-65"></a>  &lt;<span class="kw">dc:description</span>&gt;Citation Key: ramond_2010_quand – Book: l’Assiette des fictions. Enquêtes sur l’autoréflexivité romanesque. Actes des colloques de Lausanne (mars 2007) et de Leuven (juin 2007)&lt;/<span class="kw">dc:description</span>&gt;</span>
+<span id="cb2-66"><a href="#cb2-66"></a>  &lt;<span class="kw">bib:pages</span>&gt;433 et suiv.&lt;/<span class="kw">bib:pages</span>&gt;</span>
+<span id="cb2-67"><a href="#cb2-67"></a>&lt;/<span class="kw">bib:BookSection</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="herausforderungen-1" class="slide level2">
+<h2>Herausforderungen</h2>
+<ul>
+<li class="fragment">Schwach standardisierte Ausgangsdaten (CSV)</li>
+<li class="fragment">Insbesondere Personen-Namen:
+<ul>
+<li class="fragment">Grenzen zwischen Namen</li>
+<li class="fragment">Vorname(n) vs.&nbsp;Nachname(n)</li>
+</ul></li>
+<li class="fragment">Publikationstypen im Zielformat (Zotero / BibTeX): Monographie vs.&nbsp;Textedition vs.&nbsp;Sammelband = “Book”</li>
+<li class="fragment">Keine Abstracts oder Keywords vorhanden</li>
+</ul>
+</section>
+<section id="zwischenergebnisse" class="slide level2">
+<h2>Zwischenergebnisse</h2>
+<ul>
+<li class="fragment">Sprachen: Französisch dominiert</li>
+<li class="fragment">Themen / Titel: Autoren, Stichworte</li>
+<li class="fragment">Praktiken der Kollaboration: Autorschaft vs.&nbsp;Herausgeberschaft</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="./img/coeditors_top2.svg" class="r-stretch quarto-figure-center"><p class="caption">Clustering von Ko-Herausgeberschaft (Gephi)</p></section>
+<section id="nächste-schritte" class="slide level2">
+<h2>Nächste Schritte</h2>
+<ul>
+<li class="fragment">Weitere Korrektur der Daten in Zotero</li>
+<li class="fragment">Updates: Zotero =&gt; BibTeX + RDF =&gt; Jupyter =&gt; HTML</li>
+<li class="fragment">Weitere Auswertungen: Sprachen, Themen, Biases</li>
+<li class="fragment">Anreicherung mit Normdaten (in Zotero schwierig)</li>
+</ul>
+</section></section>
+<section>
+<section id="fazit" class="title-slide slide level1 center">
+<h1>Fazit</h1>
+
+</section>
+<section id="positive-aspekte" class="slide level2">
+<h2>Positive Aspekte</h2>
+<ul>
+<li class="fragment">Transformation in stärker strukturierte Formate:
+<ul>
+<li class="fragment">zeitgemäße Publikationsform</li>
+<li class="fragment">Suche und Auswertungen</li>
+<li class="fragment">verbesserte Nachnutzbarkeit</li>
+</ul></li>
+<li class="fragment">Automatisierte Pipeline
+<ul>
+<li class="fragment">macht Aktualisierungen / Korrekturen <em>relativ</em> einfach</li>
+</ul></li>
+</ul>
+</section>
+<section id="herausforderungen-2" class="slide level2">
+<h2>Herausforderungen</h2>
+<ul>
+<li class="fragment">Ausgangsdaten meist nicht ausreichend strukturiert
+<ul>
+<li class="fragment">Personendaten: Querverweise</li>
+<li class="fragment">Bibliographie: Personen-Namen</li>
+</ul></li>
+<li class="fragment">Derzeit schwache Erschließung über Normdaten
+<ul>
+<li class="fragment">Personendaten: in XML relativ gut machbar</li>
+<li class="fragment">Bibliographie: in Zotero relativ schlecht machbar</li>
+</ul></li>
+<li class="fragment">Zielformat / Datenmodell muss gut überlegt sein (XML!)</li>
+</ul>
 </section></section>
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-jannidis_2017_datenmodellierung" class="csl-entry" role="listitem">
+Jannidis, Fotis. 2017. <span>“<span>Datenmodellierung</span>.”</span> In, edited by Fotis Jannidis, Hubertus Kohle, and Malte Rehbein. <span>Stuttgart</span>: <span>Metzler</span>.
+</div>
 <div id="ref-melancon_2023_liberation" class="csl-entry" role="listitem">
 Melançon, Benoît. 2023. <span>“<span>Libération des données, 21 février 2023</span>.”</span> <em>Site de Benoît Melançon / XVIIIe siècle : bibliographie</em>. <a href="http://mapageweb.umontreal.ca/melancon/donnees_biblios_1_550.html">http://mapageweb.umontreal.ca/melancon/donnees_biblios_1_550.html</a>.
 </div>
 <div id="ref-moeschter_2008_judena" class="csl-entry" role="listitem">
 Möschter, Angela. 2008. <em><span>Juden im venezianischen Treviso (1389 - 1509)</span></em>. <span>Forschungen zur Geschichte der Juden / A</span>. <span>Hannover</span>: <span>Hahn</span>. <a href="https://d-nb.info/989997774/04">https://d-nb.info/989997774/04</a>.
+</div>
+<div id="ref-schoch_2013_bigb" class="csl-entry" role="listitem">
+Schöch, Christof. 2013. <span>“Big ? <span>Smart</span>? <span>Clean</span>? <span>Messy</span>? <span>Data</span> in the <span>Humanities</span>.”</span> <em>Journal of the Digital Humanities</em> 2 (3): 2–13.
 </div>
 </div>
 

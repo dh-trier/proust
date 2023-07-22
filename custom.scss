@@ -1,13 +1,13 @@
 /*-- scss:defaults --*/
 
 $body-bg: #fff;
-$body-color: #424242;
-$link-color: #043f66;
+$body-color: #282828;
+$link-color: #185f8e;
 
 /*-- scss:rules --*/
 
-.reveal h1 {
-    font-size: 40pt;
+.reveal .section h1 {
+    font-size: 36pt;
 }
 
 .reveal h2 {
@@ -27,7 +27,17 @@ $link-color: #043f66;
 }
 
 .reveal p {
-    font-size: 14pt;
+    font-size: 12pt;
+}
+
+
+.reveal li {
+    font-size: 22pt;
+}
+
+
+.reveal li ul li {
+    font-size: 18pt;
 }
 
 
