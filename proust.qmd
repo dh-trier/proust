@@ -2,7 +2,7 @@
 title: "Modellierung von semi-strukturierten Daten in den Digital Humanities"
 subtitle: "Workshop: Remembrance of Strings Past"
 author: "Christof Schöch"
-date: "23. Juli 2023"
+date: "25. Juli 2023"
 bibliography: refs.bib
 csl: chicago.csl
 format: 
@@ -10,7 +10,7 @@ format:
     incremental: true
     theme: [simple, custom.scss]
     logo: img/uni-trier_icon.png
-    footer: "TCDH"
+    footer: "[CC BY](https://creativecommons.org/licenses/by/4.0/)"
 
 ---
 
@@ -285,4 +285,11 @@ Siehe: [@melancon_2023_liberation].
 # References 
 
 ::: {#refs}
+:::
+
+# Back matter
+
+::: {.nonincremental}
+* **Referenz**: Christof Schöch, "Modellierung von semi-strukturierten Daten in den Digital Humanities". *Workshop: Remembrance of Strings Past*, org. Maria Hinzmann, Matei Chihaia, Christof Schöch. Trier / TCDH, 25.-26. Juli 2023. URL: https://dhtrier.quarto.pub/proust. 
+* **Lizenz**: [Creative Commons Attribution 4.0 International (CC BY)](https://creativecommons.org/licenses/by/4.0/) 
 :::
