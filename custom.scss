@@ -1,0 +1,36 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fff;
+$body-color: #424242;
+$link-color: #043f66;
+
+/*-- scss:rules --*/
+
+.reveal h1 {
+    font-size: 40pt;
+}
+
+.reveal h2 {
+    font-size: 32pt;
+}
+
+.reveal h3 {
+    font-size: 24pt;
+}
+
+.reveal p.subtitle {
+    font-size: 32pt;
+}
+
+.reveal p.date {
+    font-size: 24pt;
+}
+
+.reveal p {
+    font-size: 14pt;
+}
+
+
+.reveal div.csl-entry {
+    font-size: 14pt;
+}

@@ -1,0 +1,4 @@
+- source: proust.qmd
+  quarto-pub:
+    - id: 961db2e4-daa9-49e3-824e-6c57b686f290
+      url: 'https://dhtrier.quarto.pub/proust'

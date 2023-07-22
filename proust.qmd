@@ -1,0 +1,99 @@
+---
+title: "Modellierung von semi-strukturierten Daten in den Digital Humanities"
+subtitle: "Workshop: Remembrance of Strings Past"
+author: "Christof Schöch"
+date: "23. Juli 2023"
+bibliography: refs.bib
+csl: chicago.csl
+format: 
+  revealjs:
+    incremental: true
+    theme: [simple, custom.scss]
+    logo: img/uni-trier_icon.png
+    footer: "TCDH"
+
+---
+
+# Übersicht 
+
+1. Begriffsklärungen
+2. Beispiel Personendaten
+3. Beispiel bibliographische Daten
+4. Fazit
+
+
+# Begriffsklärungen 
+
+## Modellierung 
+
+## Daten 
+
+## Strukturiertheit 
+
+- strukturiert (Datenbank)
+- unstrukturiert (plain text)
+- semi-strukturiert (XML, JSON)
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
+
+# Beispiel Personendaten 
+
+## Der 'Möschter-Katalog' (2008)
+
+::: aside
+Siehe [@moeschter_2008_judena]. 
+:::
+
+
+
+
+# Beispiel bibliographische Daten
+
+
+
+## Hintergrund 
+
+- Bibliographie von Benoit Melancon: *XVIIIe: Bibliographie* (seit 1992)
+- Formular => FileMaker-Datenbank => HTML: [mapageweb.umontreal.ca](http://www.mapageweb.umontreal.ca/melancon/biblio.tdm.html)
+- Januar 2023: Publikation der Gesamtdaten 1992-2022 als CSV-Datei
+
+::: aside
+Siehe: [@melancon_2023_liberation]. 
+:::
+
+## Vorgehensweise 
+
+- Python-Skript zur Transformation CSV => BibTeX
+- Import der BibTeX-Datei in Zotero: dort Korrekturen
+- Export in Standard-Formate, darunter Zotero RDF
+- Auswertungen und Kommentare: [Website](https://christofs.github.io/BIB18/)
+
+
+
+## Test
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+
+# References 
+
+::: {#refs}
+:::
