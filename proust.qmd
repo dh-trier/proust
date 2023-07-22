@@ -1,6 +1,6 @@
 ---
 title: "Modellierung von semi-strukturierten Daten in den Digital Humanities"
-subtitle: "Workshop: Remembrance of Strings Past"
+subtitle: "Workshop: Remembrance of Strings Past – [https://dhtrier.quarto.pub/proust/](https://dhtrier.quarto.pub/proust/)"
 author: "Christof Schöch"
 date: "25. Juli 2023"
 bibliography: refs.bib
