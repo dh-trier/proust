@@ -27,6 +27,7 @@ format:
 - Typische Praktiken der DH beim Umgang mit schwach strukturierten Daten aus den Geisteswissenschaften 
 - Prinzip der Modellierung, Explizierung, Anreicherung
 - Anhang zweier kleiner Nebenprojekte aus den letzten Monaten
+- Weiteres, ähnliches, aber auch deutlich komplexeres Projekt: Die "Satorbase" neu modellieren und implementieren
 :::
 
 
@@ -70,9 +71,6 @@ Siehe: [@schoch_2013_bigb].
 - (stark) strukturiert: bspw. relationale Datenbank
 
 
-::: {.notes}
-Speaker notes go here.
-:::
 
 
 
@@ -90,11 +88,13 @@ Speaker notes go here.
 Siehe [@moeschter_2008_judena]. 
 :::
 
+
 ## Vorgehensweise 
 
 - Textvorlage in DOCX: ==[Python]==> XML-TEI (Referenzdaten)
 - XML-TEI ==[Python]==> Markdown (Quarto-Basis)
 - Markdown ==[Quarto]==> HTML + PDF
+
 
 ## XML-Beispiel 
 
@@ -129,6 +129,7 @@ Siehe [@moeschter_2008_judena].
 - Implizite Verweisstruktur (händische Nacharbeit im XML)
 - Korrekturvorgang: XML => MD => HTML/PDF
 
+
 ## Ergebnis (Stand Juli 2023)
 
 - Eine [Testversion](https://dhtrier.quarto.pub/treviso-katalog/) ist online
@@ -136,13 +137,16 @@ Siehe [@moeschter_2008_judena].
 - Querverweise fehlen 
 - Publikation steht aus
 
+
 ##
 ![Beispiel-Eintrag aus dem digitalen Treviso-Katalog](img/treviso-entry.png)
 
 
 
 
+
 # Beispiel bibliographische Daten
+
 
 ## Hintergrund 
 
@@ -155,12 +159,14 @@ Siehe [@moeschter_2008_judena].
 Siehe: [@melancon_2023_liberation]. 
 :::
 
+
 ## Vorgehensweise 
 
 - CSV ==[Python]==> BibTeX-Dateien
 - BibTeX-Dateien ==[Import]==> Zotero: dort Korrekturen
 - Zotero ==[Export]==> u.a. Zotero RDF
 - RDF ==[Python & Quarto]==> Auswertungen und Kommentare + [BIB18-Website](https://christofs.github.io/BIB18/)
+
 
 ## XML-Beispiel (Zotero RDF)
 
@@ -234,6 +240,7 @@ Siehe: [@melancon_2023_liberation].
 </bib:BookSection>
 ```
 
+
 ## Herausforderungen 
 
 - Schwach standardisierte Ausgangsdaten (CSV)
@@ -243,14 +250,17 @@ Siehe: [@melancon_2023_liberation].
 - Publikationstypen im Zielformat (Zotero / BibTeX): Monographie vs. Textedition vs. Sammelband = "Book" 
 - Keine Abstracts oder Keywords vorhanden
 
+
 ## Zwischenergebnisse 
 
 - Sprachen: Französisch dominiert 
 - Themen / Titel: Autoren, Stichworte
 - Praktiken der Kollaboration: Autorschaft vs. Herausgeberschaft
 
+
 ## 
 ![Clustering von Ko-Herausgeberschaft (Gephi)](/img/coeditors_top2.svg)
+
 
 ## Nächste Schritte 
 
@@ -260,7 +270,10 @@ Siehe: [@melancon_2023_liberation].
 - Anreicherung mit Normdaten (in Zotero schwierig)
 
 
+
+
 # Fazit 
+
 
 ## Positive Aspekte 
 
@@ -287,6 +300,7 @@ Siehe: [@melancon_2023_liberation].
 
 ::: {#refs}
 :::
+
 
 # Back matter
 
