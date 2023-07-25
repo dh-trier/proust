@@ -134,12 +134,16 @@ Siehe [@moeschter_2008_judena].
 
 - Eine [Testversion](https://dhtrier.quarto.pub/treviso-katalog/) ist online
 - Daten liegen semi-strukturiert vor
-- Querverweise fehlen 
+- Querverweise liegen vor, Normdaten (Orte) fehlen
 - Publikation steht aus
 
 
 ##
 ![Beispiel-Eintrag aus dem digitalen Treviso-Katalog](img/treviso-entry.png)
+
+
+##
+![Netzwerk der Personen mit >3 Querverweisen](img/Treviso-Network_selection.png)
 
 
 
@@ -256,6 +260,10 @@ Siehe: [@melancon_2023_liberation].
 - Sprachen: Französisch dominiert 
 - Themen / Titel: Autoren, Stichworte
 - Praktiken der Kollaboration: Autorschaft vs. Herausgeberschaft
+
+
+## 
+![Die häufigsten Stichwörter in den Titeln](/img/titles-1.png)
 
 
 ## 
