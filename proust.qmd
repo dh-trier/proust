@@ -143,8 +143,11 @@ Siehe [@moeschter_2008_judena].
 
 
 ##
-![Netzwerk der Personen mit >3 Querverweisen](img/Treviso-Network_selection.png)
+![Netzwerk der Personen mit >3 Querverweisen (Ausschnittl)](img/Treviso-Network_selection.png)
 
+
+##
+![Netzwerk der Personen mit >3 Querverweisen](img/Treviso-Network_3-circular-curved-min3-labels-colors.svg)
 
 
 
