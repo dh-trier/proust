@@ -170,7 +170,7 @@ Siehe: [@melancon_2023_liberation].
 ## Vorgehensweise 
 
 - CSV ==[Python]==> BibTeX-Dateien
-- BibTeX-Dateien ==[Import]==> Zotero: dort Korrekturen
+- BibTeX-Dateien ==[Import]==> [Zotero](https://www.zotero.org/groups/5067408/bib18): dort Korrekturen
 - Zotero ==[Export]==> u.a. Zotero RDF
 - RDF ==[Python & Quarto]==> Auswertungen und Kommentare + [BIB18-Website](https://christofs.github.io/BIB18/)
 
